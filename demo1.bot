@@ -1,0 +1,18 @@
+{
+    "name": "demo1",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "appId": "",
+            "appPassword": "",
+            "endpoint": "http://localhost:2339/api/messages",
+            "id": "a3c14ba0-d3dc-11e8-9981-99266f14e9fe",
+            "name": "demo1"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "overrides": null,
+    "path": "D:\\training\\Bot\\demo1\\demo1.bot"
+}
