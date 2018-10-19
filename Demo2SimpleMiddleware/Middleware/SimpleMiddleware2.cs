@@ -19,7 +19,7 @@
         {
             await context.SendActivityAsync($"[SimpleMiddleware2] {context.Activity.Type}/OnTurnAsync/Before");
 
-            if (context.Activity.Type == ActivityTypes.Message && context.Activity.Text == "secret pass")
+            if (context.Activity.Type == ActivityTypes.Message && context.Activity.Text == "secret pwd")
             {
                 // calling next is optional
                 await next(cancellationToken);
