@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace demo1
 {
     /// <summary>
-    /// 
+    /// test
     /// </summary>
     /// <created>10/20/2018</created>
     public class Startup
