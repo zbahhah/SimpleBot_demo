@@ -9,6 +9,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace demo1
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <created>10/20/2018</created>
     public class Startup
     {
         public string ContentRootPath { get; set; }
