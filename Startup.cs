@@ -1,35 +1,47 @@
-﻿
-using demo1.Bots;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Bot.Builder.BotFramework;
-using Microsoft.Bot.Builder.Integration.AspNet.Core;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace demo1
+﻿namespace demo1
 {
+    using demo1.Bots;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Bot.Builder.BotFramework;
+    using Microsoft.Bot.Builder.Integration.AspNet.Core;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+
     /// <summary>
-    /// test
+    /// Startup dotnet core class
     /// </summary>
     /// <created>10/20/2018</created>
     public class Startup
     {
+        /// <summary>
+        /// Gets or sets the content root path.
+        /// </summary>
+        /// <value>
+        /// The content root path.
+        /// </value>
+        /// <created>10/20/2018</created>
         public string ContentRootPath { get; set; }
 
-        //public Startup(IConfiguration configuration)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Startup"/> class.
+        /// This method gets called by the runtime. Use this method to add services to the container.
+        /// </summary>
+        /// <param name="env">The env.</param>
+        /// <created>10/20/2018</created>
         public Startup(IHostingEnvironment env)
-        {
-            //Configuration = configuration;
+        {            
             ContentRootPath = env.ContentRootPath;
         }
 
-        //public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// Configures the services.
+        /// </summary>
+        /// <param name="services">The services.</param>
+        /// <created>10/20/2018</created>
         public void ConfigureServices(IServiceCollection services)
-        {
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+        {            
             var builder = new ConfigurationBuilder()
                 .SetBasePath(ContentRootPath)
                 .AddJsonFile("appsettings.json")
@@ -45,25 +57,19 @@ namespace demo1
                 options.CredentialProvider = new ConfigurationCredentialProvider(configuration);
             });
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+                
+        /// <summary>
+        /// Configures the specified application.
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app">The application.</param>
+        /// <param name="env">The env.</param>
+        /// <created>10/20/2018</created>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseStaticFiles();
 
             app.UseBotFramework();
-
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-            //else
-            //{
-            //    app.UseHsts();
-            //}
-
-            //app.UseHttpsRedirection();
-            //app.UseMvc();
         }
     }
 }
