@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "demo1", "demo1\demo1.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo2SimpleMiddleware", "Demo2SimpleMiddleware\Demo2SimpleMiddleware.csproj", "{A4CD57F5-723B-4B58-9144-9D030478175C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "readme", "readme", "{A877AAF6-14BE-440D-AA7B-7D47D687C277}"
+	ProjectSection(SolutionItems) = preProject
+		chatbotlogo.png = chatbotlogo.png
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
