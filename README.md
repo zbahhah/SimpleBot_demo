@@ -1,4 +1,4 @@
-		![Logo of the project](chatbotlogo.png)
+![Logo of the project](chatbotlogo.png)
 
 # A Simple Chatbot Using Microsoft Bot Framework ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 > [Microsoft Bot Framework](https://dev.botframework.com/)
