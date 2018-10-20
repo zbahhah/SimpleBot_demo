@@ -8,7 +8,7 @@ A Simple Chatbot demo.
 ## Installing / Getting started
 
 ### Requirements
-* Visual Studio 2017 / VS Code
+* Visual Studio 2017 / Visual Studio Code
 * [.NET Core 2.1 SDK](https://www.microsoft.com/net/download)
 * [Bot builder](https://github.com/Microsoft/BotBuilder)
 * [Microsoft Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases)
@@ -17,8 +17,11 @@ A Simple Chatbot demo.
 
 
 ```shell
-### Tip
+
+	Tip
+
 If needed, change the project build type to .Net Core 2.1 If needed, [update NuGet packages](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio).
+
 ```
 
 ## Developing
@@ -31,6 +34,13 @@ git clone https://github.com/zbahhah/SimpleBot_demo
 cd SimpleBot_demo/
 
 ```
+
+## Thanks
+
+The Code is from James E Mann youtube channel
+* [James E Mann Microsoft Bot Framework .NET Core (V4)](https://www.youtube.com/playlist?list=PLgF-CyaX1p3EGrRFze2DB5XWvBz1uwNhd)
+* [jamesemann bot-framework-v4-intro-dotnet-core gitgub repo](https://github.com/jamesemann/bot-framework-v4-intro-dotnet-core)
+* [Microsoft/BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
