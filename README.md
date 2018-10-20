@@ -14,6 +14,7 @@ A Simple Chatbot demo.
 * [Microsoft Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases)
 * [Bot Builder SDK v4 template for C# Visual Studio 2017](https://botbuilder.myget.org/feed/aitemplates/package/vsix/BotBuilderV4.fbe0fc50-a6f1-4500-82a2-189314b7bea2)
 * Knowledge of [ASP.Net Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.1) and asynchronous programming in [C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/index)
+* [ngrok](https://ngrok.com/) & [Download & setup ngrok](https://ngrok.com/download) & [Configure ngrok for Bot Emulator](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0#configure-ngrok)
 
 
 ```shell
