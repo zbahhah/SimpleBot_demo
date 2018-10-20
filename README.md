@@ -20,7 +20,7 @@ A Simple Chatbot demo.
 ```shell
 Tip
 
-If needed, change the project build type to .Net Core 2.1 If needed, [update NuGet packages](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio).
+If needed, change the project build type to .Net Core 2.1 If needed, `[update NuGet packages](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)`.
 
 ```
 
