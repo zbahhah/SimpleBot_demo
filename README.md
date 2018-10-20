@@ -17,12 +17,12 @@ A Simple Chatbot demo.
 * [ngrok](https://ngrok.com/) & [Download & setup ngrok](https://ngrok.com/download) & [Configure ngrok for Bot Emulator](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0#configure-ngrok)
 
 
-```shell
+
 Tip
 
-If needed, change the project build type to .Net Core 2.1 If needed, `[update NuGet packages](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)`.
+> If needed, change the project build type to .Net Core 2.1 If needed, [update NuGet packages](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio) .
 
-```
+
 
 ## Developing
 
