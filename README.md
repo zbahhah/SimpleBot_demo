@@ -1,4 +1,4 @@
-![Logo of the project](chatbotlogo.png)
+		![Logo of the project](chatbotlogo.png)
 
 # A Simple Chatbot Using Microsoft Bot Framework ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 > [Microsoft Bot Framework](https://dev.botframework.com/)
@@ -17,8 +17,7 @@ A Simple Chatbot demo.
 
 
 ```shell
-
-	Tip
+Tip
 
 If needed, change the project build type to .Net Core 2.1 If needed, [update NuGet packages](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio).
 
