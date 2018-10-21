@@ -1,12 +1,15 @@
-﻿namespace demo3State
+﻿namespace demo4Dialog
 {
-    using demo3State.Bots;
+    using demo4Dialog.Bots;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Builder.BotFramework;
+    using Microsoft.Bot.Builder.Dialogs;
     using Microsoft.Bot.Builder.Integration;
-    using Microsoft.Bot.Builder.Integration.AspNet.Core;    
+    using Microsoft.Bot.Builder.Integration.AspNet.Core;
+    using Microsoft.Bot.Configuration;
+    using Microsoft.Bot.Connector.Authentication;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Options;
@@ -16,7 +19,7 @@
     /// <summary>
     /// Startup dotnet core class
     /// </summary>
-    /// <created>10/20/2018</created>
+    /// <created>10/21/2018</created>
     public class Startup
     {
         /// <summary>
@@ -25,7 +28,7 @@
         /// <value>
         /// The content root path.
         /// </value>
-        /// <created>10/20/2018</created>
+        /// <created>10/21/2018</created>
         public string ContentRootPath { get; set; }
 
         /// <summary>
@@ -33,7 +36,7 @@
         /// This method gets called by the runtime. Use this method to add services to the container.
         /// </summary>
         /// <param name="env">The env.</param>
-        /// <created>10/20/2018</created>
+        /// <created>10/21/2018</created>
         public Startup(IHostingEnvironment env)
         {
             ContentRootPath = env.ContentRootPath;
@@ -44,7 +47,7 @@
         /// Configures the services.
         /// </summary>
         /// <param name="services">The services.</param>
-        /// <created>10/20/2018</created>
+        /// <created>10/21/2018</created>
         public void ConfigureServices(IServiceCollection services)
         {
             var builder = new ConfigurationBuilder()
@@ -57,7 +60,7 @@
             services.AddSingleton(configuration);
 
             // add your state bot to your app
-            services.AddBot<StateBot>(options =>
+            services.AddBot<DialogBot>(options =>
             {
                 options.CredentialProvider = new ConfigurationCredentialProvider(configuration);
 
@@ -75,7 +78,7 @@
 
             // Create and register state accessors.
             // Accessors created here are passed into the IBot-derived class on every turn.
-            // https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/02.echo-with-counter
+            // https://github.com/Microsoft/BotBuilder-Samples/blob/master/samples/csharp_dotnetcore/04.simple-prompt/
             services.AddSingleton<BotAccessors>(serviceProvider =>
             {
                 var options = serviceProvider.GetRequiredService<IOptions<BotFrameworkOptions>>().Value;
@@ -90,11 +93,11 @@
                     throw new InvalidOperationException("ConversationState must be defined and added before adding conversation-scoped state accessors.");
                 }
 
-                // Create the custom state accessor.
-                // State accessors enable other components to read and write individual properties of state.
+                // The dialogs will need a state store accessor. Creating it here once (on-demand) allows the dependency injection
+                // to hand it to our IBot class that is create per-request.
                 var accessors = new BotAccessors(conversationState)
                 {
-                    CounterStatePropertyAccessor = conversationState.CreateProperty<CounterState>(BotAccessors.CounterStateName),
+                    DialogStateAccessor = conversationState.CreateProperty<DialogState>(BotAccessors.DialogStateAccessorName),
                 };
 
                 return accessors;
@@ -108,7 +111,7 @@
         /// </summary>
         /// <param name="app">The application.</param>
         /// <param name="env">The env.</param>
-        /// <created>10/20/2018</created>
+        /// <created>10/21/2018</created>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseStaticFiles();

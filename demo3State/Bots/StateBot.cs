@@ -21,6 +21,8 @@
 
         public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))
         {
+            var converstationId = $"Conversation.Id: {turnContext.Activity?.Conversation?.Id}\n";
+
             // Handle Message activity type, which is the main activity type for shown within a conversational interface
             // Message activities may contain text, speech, interactive cards, and binary or unknown attachments.
             // see https://aka.ms/about-bot-activity-message to learn more about the message and other activity types
@@ -35,17 +37,18 @@
                 // Set the property using the accessor.
                 await _accessors.CounterStatePropertyAccessor.SetAsync(turnContext, newState);
 
-                // Save the new turn count into the conversation state.
+                // Save the new turn count into the conversation state 
+                //(on conversation level or saveing a state per each conversation ).
                 await _accessors.ConversationState.SaveChangesAsync(turnContext);                
 
                 // Echo back to the user whatever they typed.
-                var responseMessage = $"Turn {newState.TurnCount}: You sent '{turnContext.Activity.Text}'\n";
+                var responseMessage = $"{converstationId}Turn {newState.TurnCount}: You sent '{turnContext.Activity.Text}'\n";
 
                 await turnContext.SendActivityAsync(responseMessage);
             }
             else
-            {
-                await turnContext.SendActivityAsync($"{turnContext.Activity.Type} event detected");
+            {                
+                await turnContext.SendActivityAsync($"{converstationId}Non-Message {turnContext.Activity.Type} activity type event detected");
             }
         }
     }
