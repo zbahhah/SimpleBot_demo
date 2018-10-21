@@ -29,7 +29,7 @@ developers to test and debug their bots on localhost or running remotely through
 - File -> Open bot and navigate to `SimpleBot_demo/demo4Dialog` folder.
 - Select `demo4.bot` file.
 
-#Prompt users for input using the Dialogs library
+# Prompt users for input using the Dialogs library
 Gathering information by posting questions is one of the main ways a bot interacts with users. It is possible to do this directly by using the [turn context](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0#defining-a-turn) object's send activity method and then process the next incoming message as the response. However, the Bot Builder SDK provides a dialogs library that provides methods designed to make it easier to ask questions, and to make sure the response matches a specific data type or meets custom validation rules. This topic details how to achieve this using prompts to ask a user for input.
 
 This article describes how to use prompts within a dialog. For information on using dialogs in general, see [using dialogs to manage simple conversation flow](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-dialog-manage-conversation-flow?view=azure-bot-service-4.0).
