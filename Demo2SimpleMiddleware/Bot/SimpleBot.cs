@@ -1,4 +1,4 @@
-﻿namespace Demo2SimpleMiddleware.Bots
+﻿namespace demo2SimpleMiddleware.Bots
 {
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Schema;

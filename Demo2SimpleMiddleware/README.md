@@ -5,15 +5,15 @@
 ```bash
 git clone https://github.com/zbahhah/SimpleBot_demo.git
 ```
-- [Optional] Update the `appsettings.json` file under `SimpleBot_demo/Demo2SimpleMiddleware` with your botFileSecret.  For Azure Bot Service bots, you can find the botFileSecret under application settings.
+- [Optional] Update the `appsettings.json` file under `SimpleBot_demo/demo2SimpleMiddleware` with your botFileSecret.  For Azure Bot Service bots, you can find the botFileSecret under application settings.
 # Prerequisites
 ## Visual Studio
-- Navigate to the samples folder (`SimpleBot_demo/Demo2SimpleMiddleware`) and open EchoBotWithCounter.csproj in Visual Studio.
+- Navigate to the samples folder (`SimpleBot_demo/demo2SimpleMiddleware`) and open EchoBotWithCounter.csproj in Visual Studio.
 - Run the project (press `F5` key).
 
 ## Visual Studio Code
-- Open `SimpleBot_demo/Demo2SimpleMiddleware` sample folder.
-- Bring up a terminal, navigate to `SimpleBot_demo/Demo2SimpleMiddleware` folder.
+- Open `SimpleBot_demo/demo2SimpleMiddleware` sample folder.
+- Bring up a terminal, navigate to `SimpleBot_demo/demo2SimpleMiddleware` folder.
 - Type `dotnet run`.
 
 ## Testing the bot using Bot Framework Emulator
@@ -23,18 +23,14 @@ developers to test and debug their bots on localhost or running remotely through
 
 ## Connect to bot using Bot Framework Emulator **V4**
 - Launch the Bot Framework Emulator.
-- File -> Open bot and navigate to `SimpleBot_demo/Demo2SimpleMiddleware` folder.
+- File -> Open bot and navigate to `SimpleBot_demo/demo2SimpleMiddleware` folder.
 - Select `demo2.bot` file.
-# Bot state
-A key to good bot design is to track the context of a conversation, so that your bot remembers things like the answers to previous questions. Depending on what your bot is used for, you may even need to keep track of conversation state or store user related information for longer than the lifetime of one given conversation.
+# Middleware
+Middleware is simply a class that sits between the adapter and your bot logic, added to your adapter's middleware collection during initialization. The SDK allows you to write your own middleware or add reusable components of middleware created by others. Every activity coming into or out of your bot flows through your middleware.
 
-In this example, the bot's state is used to track number of messages.
+The adapter processes and directs incoming activities in through the bot middleware pipeline to your bot’s logic and then back out again. As each activity flows in and out of the bot, each piece of middleware can inspect or act upon the activity, both before and after the bot logic runs.
 
- A bot's state is information it remembers in order to respond appropriately to incoming messages. The Bot Builder SDK provides classes for [storing and retrieving state data](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-v4-state?view=azure-bot-service-4.0&tabs=js) as an object associated with a user or a conversation.
-
-    - Conversation properties help your bot keep track of the current conversation the bot is having with the user. If your bot needs to complete a sequence of steps or switch between conversation topics, you can use conversation properties to manage steps in a sequence or track the current topic. Since conversation properties reflect the state of the current conversation, you typically clear them at the end of a session, when the bot receives an end of conversation activity.
-    
-    - User properties can be used for many purposes, such as determining where the user's prior conversation left off or simply greeting a returning user by name. If you store a user's preferences, you can use that information to customize the conversation the next time you chat. For example, you might alert the user to a news article about a topic that interests her, or alert a user when an appointment becomes available. You should clear them if the bot receives a delete user data activity.
+Before jumping into middleware, it is important to understand [bots in general](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0) and [how they process activities](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0#the-activity-processing-stack).
 
 # Deploy this bot to Azure
 You can use the [MSBot](https://github.com/microsoft/botbuilder-tools) Bot Builder CLI tool to clone and configure any services this sample depends on. In order to install this and other tools, you can read [Installing CLI Tools](../../../Installing_CLI_tools.md).

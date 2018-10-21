@@ -14,7 +14,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Demo2SimpleMiddleware": {
+    "demo2SimpleMiddleware": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

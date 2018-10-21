@@ -1,7 +1,7 @@
-﻿namespace Demo2SimpleMiddleware
+﻿namespace demo2SimpleMiddleware
 {
-    using Demo2SimpleMiddleware.Bots;
-    using Demo2SimpleMiddleware.Middleware;
+    using demo2SimpleMiddleware.Bots;
+    using demo2SimpleMiddleware.Middleware;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Bot.Builder.BotFramework;

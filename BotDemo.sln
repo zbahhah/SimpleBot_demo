@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "demo1", "demo1\demo1.csproj", "{0830EF11-0236-471F-8490-47737F6668C5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo2SimpleMiddleware", "Demo2SimpleMiddleware\Demo2SimpleMiddleware.csproj", "{A4CD57F5-723B-4B58-9144-9D030478175C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "demo2SimpleMiddleware", "Demo2SimpleMiddleware\demo2SimpleMiddleware.csproj", "{A4CD57F5-723B-4B58-9144-9D030478175C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "readme", "readme", "{A877AAF6-14BE-440D-AA7B-7D47D687C277}"
 	ProjectSection(SolutionItems) = preProject

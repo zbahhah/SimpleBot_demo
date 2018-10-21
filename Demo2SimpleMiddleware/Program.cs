@@ -1,4 +1,4 @@
-﻿namespace Demo2SimpleMiddleware
+﻿namespace demo2SimpleMiddleware
 {
     using Microsoft.AspNetCore;
     using Microsoft.AspNetCore.Hosting;

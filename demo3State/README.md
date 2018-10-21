@@ -25,6 +25,7 @@ developers to test and debug their bots on localhost or running remotely through
 - Launch the Bot Framework Emulator.
 - File -> Open bot and navigate to `SimpleBot_demo/demo3State` folder.
 - Select `demo3.bot` file.
+
 # Bot state
 A key to good bot design is to track the context of a conversation, so that your bot remembers things like the answers to previous questions. Depending on what your bot is used for, you may even need to keep track of conversation state or store user related information for longer than the lifetime of one given conversation.
 
